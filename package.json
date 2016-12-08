@@ -1,0 +1,32 @@
+{
+  "name": "arthur-snake-bot",
+  "version": "1.0.0",
+  "description": "Bot for Arthur's snake",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthur-snake/snake-bot.git"
+  },
+  "keywords": [
+    "snake",
+    "bot",
+    "game"
+  ],
+  "author": "Arthur Petukhovsky <petuhovskiy@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthur-snake/snake-bot/issues"
+  },
+  "homepage": "https://github.com/arthur-snake/snake-bot#readme",
+  "dependencies": {
+    "arthur-snake": "^1.0.1",
+    "commander": "^2.9.0",
+    "random-js": "^1.0.8"
+  },
+  "bin": {
+    "snake-bot": "./index.js"
+  }
+}
