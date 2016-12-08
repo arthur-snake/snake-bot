@@ -62,6 +62,11 @@ snake.on("map.update", () => {
 	bfs[pos.y][pos.x].start = true;
 	let tx, ty;
 	let find = false;
+
+	const gg = [0, 1, 2, 3];
+	random.shuffle(gg);
+	//console.log(gg);
+
 	while (un < uk) {
 		const el = q[un++];
 		let x = el.x;
@@ -76,8 +81,9 @@ snake.on("map.update", () => {
 			}
 		}
 		for (let i = 0; i < go.length; i++) {
-			let fx = x + go[i].x;
-			let fy = y + go[i].y;
+			const ggg = go[gg[i]];
+			let fx = x + ggg.x;
+			let fy = y + ggg.y;
 
 			if (fx < 0) fx += columns;
 			if (fy < 0) fy += rows;
@@ -86,9 +92,9 @@ snake.on("map.update", () => {
 
 			const toMap = snake.map.map[fy][fx].info;
 			if (toMap.type != "free" && toMap.type != "food" || bfs[fy][fx].visited) continue;
-			q[uk++] = {x: fx, y: fy, from: go[i]};
+			q[uk++] = {x: fx, y: fy, from: ggg};
 			bfs[fy][fx].visited = true;
-			bfs[fy][fx].from = go[i];
+			bfs[fy][fx].from = ggg;
 		}
 	}
 	if (!find) {
