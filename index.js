@@ -32,12 +32,13 @@ snake.on("init", () => {
 	id = undefined;
 });
 
-snake.on("cell.update", )
+snake.on("cell.update", () => {
+
+});
 
 snake.on("map.update", () => {
 	snake.go(go[random.integer(0, 3)]);
 });
-
 
 
 snake.on("ws.open", () => {
