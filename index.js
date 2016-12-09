@@ -71,12 +71,14 @@ snake.on("map.update", () => {
 		const el = q[un++];
 		let x = el.x;
 		let y = el.y;
+
+		tx = x;
+		ty = y;
+
 		const m = snake.map.map[y][x].info;
 		if (typeof m !== "undefined") {
 			if (m.type == "food") {
 				find = true;
-				tx = x;
-				ty = y;
 				break;
 			}
 		}
@@ -99,10 +101,8 @@ snake.on("map.update", () => {
 	}
 	if (!find) {
 		if (uk >= 2) {
-			//console.log(q[1]);
-			snake.go(q[1].from.msg);
-		}
-		return;
+			find = true;
+		} else return;
 	}
 	while (true) {
 		const cur = bfs[ty][tx];

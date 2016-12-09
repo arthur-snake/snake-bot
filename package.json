@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/arthur-snake/snake-bot#readme",
   "dependencies": {
-    "arthur-snake": "^1.0.1",
+    "arthur-snake": "^1.0.2",
     "commander": "^2.9.0",
     "random-js": "^1.0.8"
   },
